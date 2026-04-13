@@ -1,0 +1,11 @@
+services:
+  expense-tracker:
+    build: .
+    container_name: expense-tracker
+    stdin_open: true
+    tty: true
+    volumes:
+      - expense-data:/app/data
+
+volumes:
+  expense-data:
