@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data
+data/expenses.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Old projects
+eni_miner/
+
+# Claude
+.claude/
