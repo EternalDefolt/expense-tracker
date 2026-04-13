@@ -32,6 +32,21 @@ docker-compose up --build
 docker-compose down
 ```
 
+## Качество кода
+
+- **Форматтер:** [black](https://github.com/psf/black) (line-length 88)
+- **Линтер:** [ruff](https://github.com/astral-sh/ruff) (правила E, F, W, I)
+- **Pre-commit:** автоматические проверки перед каждым коммитом
+
+```bash
+# Установка хуков
+pip install pre-commit
+pre-commit install
+
+# Ручной запуск проверок
+pre-commit run --all-files
+```
+
 ## Структура проекта
 
 ```
