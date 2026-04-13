@@ -1,6 +1,6 @@
-from expense import ExpenseTracker, CATEGORIES
-from storage import save_expenses, load_expenses
+from expense import CATEGORIES, ExpenseTracker
 from stats import print_stats
+from storage import load_expenses, save_expenses
 
 
 def show_menu():
@@ -56,7 +56,10 @@ def show_expenses(tracker):
     print(f"\n  {'#':<4} {'Дата':<12} {'Категория':<15} {'Сумма':>10}  {'Описание'}")
     print("  " + "-" * 60)
     for i, exp in enumerate(expenses, 1):
-        print(f"  {i:<4} {exp.date:<12} {exp.category:<15} {exp.amount:>10.2f}  {exp.description}")
+        print(
+            f"  {i:<4} {exp.date:<12} {exp.category:<15}"
+            f" {exp.amount:>10.2f}  {exp.description}"
+        )
     print(f"\n  Итого: {sum(e.amount for e in expenses):.2f} руб.")
 
 
