@@ -56,6 +56,16 @@ docker-compose down
 - Образование
 - Другое
 
+## Скриншоты Docker
+
+### Сборка образа и запуск контейнера
+
+![Docker Build и Run](screenshots/docker_build.png)
+
+### Docker Compose
+
+![Docker Compose](screenshots/docker_compose.png)
+
 ## Автор
 
 EternalDefolt
