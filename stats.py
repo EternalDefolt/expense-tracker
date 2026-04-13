@@ -1,7 +1,5 @@
 from collections import defaultdict
 
-from expense import CATEGORIES
-
 
 def total_sum(expenses):
     """Общая сумма всех расходов."""

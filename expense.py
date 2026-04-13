@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 CATEGORIES = [
     "Еда",
     "Транспорт",
@@ -65,7 +64,10 @@ class Expense:
         )
 
     def __str__(self):
-        return f"[{self.date}] {self.category}: {self.amount:.2f} руб. — {self.description}"
+        return (
+            f"[{self.date}] {self.category}: "
+            f"{self.amount:.2f} руб. — {self.description}"
+        )
 
 
 class ExpenseTracker:
