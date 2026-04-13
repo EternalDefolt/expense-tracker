@@ -17,10 +17,29 @@ class Expense:
 
     def __init__(self, amount, category, description="", date=None, expense_id=None):
         self.id = expense_id or self._generate_id()
-        self.amount = float(amount)
-        self.category = category
-        self.description = description
+        self.amount = self._validate_amount(amount)
+        self.category = self._validate_category(category)
+        self.description = description.strip()
         self.date = date or datetime.now().strftime("%Y-%m-%d")
+
+    @staticmethod
+    def _validate_amount(amount):
+        try:
+            value = float(amount)
+        except (TypeError, ValueError):
+            raise ValueError(f"Сумма должна быть числом, получено: {amount}")
+        if value <= 0:
+            raise ValueError(f"Сумма должна быть положительной, получено: {value}")
+        return round(value, 2)
+
+    @staticmethod
+    def _validate_category(category):
+        if category not in CATEGORIES:
+            raise ValueError(
+                f"Неизвестная категория: '{category}'. "
+                f"Доступные: {', '.join(CATEGORIES)}"
+            )
+        return category
 
     @staticmethod
     def _generate_id():
